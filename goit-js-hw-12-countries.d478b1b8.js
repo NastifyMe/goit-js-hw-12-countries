@@ -207,7 +207,7 @@
       });
     }
   }
-})({"5j6Kf":[function(require,module,exports,__globalThis) {
+})({"3ZtQr":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -215,7 +215,7 @@ var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "d68ad56631b563d9";
+module.bundle.HMR_BUNDLE_ID = "5f622421d478b1b8";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -713,7 +713,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"a0t4e":[function(require,module,exports,__globalThis) {
+},{}],"69GQW":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _lodashDebounce = require("lodash.debounce");
 var _lodashDebounceDefault = parcelHelpers.interopDefault(_lodashDebounce);
@@ -725,7 +725,7 @@ var _pnotifyCss = require("@pnotify/core/dist/PNotify.css");
 const inputCountry = document.querySelector('.inputCountry');
 const container = document.querySelector('.container');
 const debounceSearch = (0, _lodashDebounceDefault.default)(search, 500);
-inputCountry.addEventListener('input', ()=>debounceSearch);
+inputCountry.addEventListener('input', debounceSearch);
 function search(event) {
     const countryName = event.target.value.trim();
     if (!countryName) {
@@ -752,7 +752,7 @@ function search(event) {
     });
 }
 
-},{"lodash.debounce":"irvaP","./fetchCountries":"bCGdT","./templates":"6vjcf","@pnotify/core":"fay4s","@pnotify/core/dist/PNotify.css":"c4y47","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"irvaP":[function(require,module,exports,__globalThis) {
+},{"lodash.debounce":"4ncm9","./fetchCountries":"46vHk","./templates":"2NQ2s","@pnotify/core":"fxC0J","@pnotify/core/dist/PNotify.css":"Gzmez","@parcel/transformer-js/src/esmodule-helpers.js":"1lv1I"}],"4ncm9":[function(require,module,exports,__globalThis) {
 /**
  * lodash (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -1037,7 +1037,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
 }
 module.exports = debounce;
 
-},{}],"bCGdT":[function(require,module,exports,__globalThis) {
+},{}],"46vHk":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>fetchCountries);
@@ -1049,7 +1049,7 @@ function fetchCountries(countryName) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1lv1I"}],"1lv1I":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -1079,7 +1079,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"6vjcf":[function(require,module,exports,__globalThis) {
+},{}],"2NQ2s":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "listCountry", ()=>listCountry);
@@ -1094,13 +1094,13 @@ function countryCard(country) {
     return `
     <h2>${country.name}</h2>
     <p><b>Capital:</b>${country.capital}</p>
-    <p><b>Population</b>${country.population}</p>
+    <p><b>Population:</b>${country.population}</p>
     <p><b>languages:</b>
     ${country.languages.map((language)=>language.name).join(', ')}</p>
     <img src="${country.flag}" alt="">`;
 }
 
-},{}],"fay4s":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1lv1I"}],"fxC0J":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 !function(t, e) {
     e(exports);
@@ -3724,6 +3724,6 @@ var global = arguments[3];
     });
 });
 
-},{}],"c4y47":[function() {},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequirec490", {})
+},{}],"Gzmez":[function() {},{}]},["3ZtQr","69GQW"], "69GQW", "parcelRequire5c22", {})
 
-//# sourceMappingURL=goit-js-hw-12-countries.31b563d9.js.map
+//# sourceMappingURL=goit-js-hw-12-countries.d478b1b8.js.map
