@@ -207,11 +207,11 @@
       });
     }
   }
-})({"5j6Kf":[function(require,module,exports,__globalThis) {
+})({"eey8C":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
-var HMR_SERVER_PORT = 1234;
+var HMR_SERVER_PORT = 63596;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
@@ -725,7 +725,7 @@ var _pnotifyCss = require("@pnotify/core/dist/PNotify.css");
 const inputCountry = document.querySelector('.inputCountry');
 const container = document.querySelector('.container');
 const debounceSearch = (0, _lodashDebounceDefault.default)(search, 500);
-inputCountry.addEventListener('input', ()=>debounceSearch);
+inputCountry.addEventListener('input', debounceSearch);
 function search(event) {
     const countryName = event.target.value.trim();
     if (!countryName) {
@@ -751,6 +751,15 @@ function search(event) {
         });
     });
 }
+function countryClick(event) {
+    if (!event.target.classList.contains('country-item')) return;
+    const countryItem = event.target.dataset.name;
+    inputCountry.value = countryItem;
+    (0, _fetchCountriesDefault.default)(countryItem).then((countries)=>{
+        container.innerHTML = (0, _templates.countryCard)(countries[0]);
+    });
+}
+container.addEventListener('click', countryClick);
 
 },{"lodash.debounce":"irvaP","./fetchCountries":"bCGdT","./templates":"6vjcf","@pnotify/core":"fay4s","@pnotify/core/dist/PNotify.css":"c4y47","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"irvaP":[function(require,module,exports,__globalThis) {
 /**
@@ -1087,20 +1096,20 @@ parcelHelpers.export(exports, "countryCard", ()=>countryCard);
 function listCountry(countries) {
     return `
     <ul>
-        ${countries.map((country)=>`<li>${country.name}</li>`).join('')}
+        ${countries.map((country)=>`<li class="country-item" data-name="${country.name}">${country.name}</li>`).join('')}
     </ul>`;
 }
 function countryCard(country) {
     return `
-    <h2>${country.name}</h2>
-    <p><b>Capital:</b>${country.capital}</p>
-    <p><b>Population</b>${country.population}</p>
-    <p><b>languages:</b>
+    <h2 class="title">${country.name}</h2>
+    <p class="capital"><b>Capital: </b>${country.capital}</p>
+    <p class="population"><b>Population: </b>${country.population}</p>
+    <p class="languages"><b>Languages: </b>
     ${country.languages.map((language)=>language.name).join(', ')}</p>
-    <img src="${country.flag}" alt="">`;
+    <img class="flag" src="${country.flag}" alt="">`;
 }
 
-},{}],"fay4s":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fay4s":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 !function(t, e) {
     e(exports);
@@ -3724,6 +3733,6 @@ var global = arguments[3];
     });
 });
 
-},{}],"c4y47":[function() {},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequirec490", {})
+},{}],"c4y47":[function() {},{}]},["eey8C","a0t4e"], "a0t4e", "parcelRequirec490", {})
 
 //# sourceMappingURL=goit-js-hw-12-countries.31b563d9.js.map
