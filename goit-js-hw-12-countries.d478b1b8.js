@@ -751,6 +751,15 @@ function search(event) {
         });
     });
 }
+function countryClick(event) {
+    if (!event.target.classList.contains('country-item')) return;
+    const countryItem = event.target.dataset.name;
+    inputCountry.value = countryItem;
+    (0, _fetchCountriesDefault.default)(countryItem).then((countries)=>{
+        container.innerHTML = (0, _templates.countryCard)(countries[0]);
+    });
+}
+container.addEventListener('click', countryClick);
 
 },{"lodash.debounce":"4ncm9","./fetchCountries":"46vHk","./templates":"2NQ2s","@pnotify/core":"fxC0J","@pnotify/core/dist/PNotify.css":"Gzmez","@parcel/transformer-js/src/esmodule-helpers.js":"1lv1I"}],"4ncm9":[function(require,module,exports,__globalThis) {
 /**
@@ -1087,17 +1096,17 @@ parcelHelpers.export(exports, "countryCard", ()=>countryCard);
 function listCountry(countries) {
     return `
     <ul>
-        ${countries.map((country)=>`<li>${country.name}</li>`).join('')}
+        ${countries.map((country)=>`<li class="country-item" data-name="${country.name}">${country.name}</li>`).join('')}
     </ul>`;
 }
 function countryCard(country) {
     return `
-    <h2>${country.name}</h2>
-    <p><b>Capital:</b>${country.capital}</p>
-    <p><b>Population:</b>${country.population}</p>
-    <p><b>languages:</b>
+    <h2 class="title">${country.name}</h2>
+    <p class="capital"><b>Capital: </b>${country.capital}</p>
+    <p class="population"><b>Population: </b>${country.population}</p>
+    <p class="languages"><b>Languages: </b>
     ${country.languages.map((language)=>language.name).join(', ')}</p>
-    <img src="${country.flag}" alt="">`;
+    <img class="flag" src="${country.flag}" alt="">`;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1lv1I"}],"fxC0J":[function(require,module,exports,__globalThis) {
